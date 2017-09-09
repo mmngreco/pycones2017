@@ -14,7 +14,9 @@ class TimeMachine(object):
         pass
 
 
-# La clase que tenemos y un ejemplo de uso
+import time
+
+# Cutre-logeo con print()
 
 class Cyborg(object):
 
@@ -27,6 +29,7 @@ class Cyborg(object):
     def travel(self, destination, year):
         print("Travelling to {} and year {}".format(destination, year))
         self.teleporter.go(destination, year)
+        time.sleep(0.25)  # not instant, but almost
 
     def attack(self, target):
         print("Attacking {}".format(target))

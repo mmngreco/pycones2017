@@ -14,25 +14,29 @@ class TimeMachine(object):
         pass
 
 
-import time
+# Algo mejor: con logging()
 
-# La clase que tenemos y un ejemplo de uso
+import time
+import logging
+logging.basicConfig(format='%(asctime)s %(message)s', level=logging.DEBUG)
 
 class Cyborg(object):
 
     def __init__(self, name):
+        logging.info("Creating new Cyborg (name={})".format(name))
         self.name = name
         self.weapon = DeathRay(ammunition=25)
         self.teleporter = TimeMachine()
 
     def travel(self, destination, year):
+        logging.info("Travelling to {} and year {}".format(destination, year))
         self.teleporter.go(destination, year)
         time.sleep(0.25)  # not instant, but almost
 
     def attack(self, target):
+        logging.info("Attacking {}".format(target))
         self.weapon.vaporize(target)
 
-# Lo ejecutamos... y no pasa nada, claro
 robot = Cyborg('T-1000')
 robot.travel(destination='Los Angeles', year=1995)
 robot.attack('Sarah Connor')

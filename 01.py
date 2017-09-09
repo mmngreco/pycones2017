@@ -4,19 +4,12 @@ from __future__ import division
 from __future__ import print_function
 from __future__ import absolute_import
 from __future__ import unicode_literals
+from base import *  # stubs so that the code below works
 
-# Stubs so the code below works
-class DeathRay(object):
-    def __init__(self, *args, **kwargs): pass
-    def vaporize(self, *args, **kwargs): pass
-class TimeMachine(object):
-    def go(self, *args, **kwargs):
-        pass
-
-
-import time
 
 # Cutre-logeo con print()
+
+import time
 
 class Cyborg(object):
 
@@ -37,6 +30,6 @@ class Cyborg(object):
 
 
 robot = Cyborg('T-1000')
-robot.travel(destination='Los Angeles', year=1995)
+robot.travel('Los Angeles', 1995)
 robot.attack('Sarah Connor')
 robot.attack('John Connor')
